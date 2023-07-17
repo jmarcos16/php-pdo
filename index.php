@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+include 'views/user.php';
+
 use src\config\Database;
 
 $conn = new Database('localhost', 'test', 'root', '');
