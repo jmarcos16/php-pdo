@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'jose.ferreira/htdocs',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'name' => 'jose.ferreira/rotas-phpoo',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'd7b2355a9f182eac210c556d79f98f1141899fc2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'jose.ferreira/htdocs' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+        'jose.ferreira/rotas-phpoo' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'd7b2355a9f182eac210c556d79f98f1141899fc2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
