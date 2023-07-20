@@ -27,15 +27,13 @@ class Router
     public function validetedUri() : Router|InvalidArgumentException
     {
 
-        $uri = explode('?', $this->uri[0]);
+        $uri = explode('?', $this->uri)[0];
 
-        foreach(Route::$route as $route) {
-            if($route['uri'] === $uri && $route['method'] === request()->method()) {
-                return $this;
-            }
+        $validateRoute = array_filter(Route::$route, function ($route) use ($uri) {
+            return $route['uri'] === $uri && $route['method'] === $this->method;
+        });
 
-            throw new InvalidArgumentException('Route not found');
-        }
+        return $validateRoute ? $this : throw new InvalidArgumentException('Route not found');
     }
 
     /**
