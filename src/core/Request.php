@@ -5,7 +5,7 @@ namespace src\core;
 class Request
 {
     public string $uri;
-    public string $query;
+    public ?string $query;
     public string $method;
 
     public function __construct()
@@ -24,7 +24,7 @@ class Request
 
     public function query(): string|null
     {
-        return $_SERVER['QUERY_STRING'];
+        return $_SERVER['QUERY_STRING'] ?? null;
     }
 
     public function method(): string

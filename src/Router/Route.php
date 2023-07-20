@@ -2,20 +2,19 @@
 
 namespace src\Router;
 
-use Closure;
-
 class Route
 {
-    private static array $routes = [];
-
-    public static function add(string $route, array $config): void
+    public static array $route = [];
+    
+    public static function add(string $method, string $uri, array $action): self
     {
-        self::$routes[$route] = $config;
-    }
-
-    public static function get(string $route, array $method): self
-    {
-        self::add($route, $method);
+        array_push(self::$route, ['method' => $method,'uri' => $uri,'action' => $action]);
         return new self();
     }
+
+    public static function get(string $uri, array $action): self
+    {
+        return self::add('GET', $uri, $action);
+    }
+
 }

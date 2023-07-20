@@ -1,4 +1,3 @@
-
 <?php
 
 function request(): \src\core\Request
@@ -10,4 +9,9 @@ function request(): \src\core\Request
 function collection(): stdClass
 {
     return new stdClass();
+}
+
+function route(): \src\Router\Route
+{
+    return new \src\Router\Route();
 }
