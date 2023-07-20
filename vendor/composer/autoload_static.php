@@ -17,10 +17,18 @@ class ComposerStaticInit8a8f013ff1a42e18d05884c03f682175
         array (
             'src\\' => 4,
         ),
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
     );
 
@@ -29,6 +37,10 @@ class ComposerStaticInit8a8f013ff1a42e18d05884c03f682175
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -36,6 +48,10 @@ class ComposerStaticInit8a8f013ff1a42e18d05884c03f682175
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
     );
 

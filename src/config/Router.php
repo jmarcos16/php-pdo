@@ -11,23 +11,23 @@ class Router
     private array $aceptMethod = ['GET', 'POST', 'PUT', 'DELETE'];
 
     private string $uri;
-    private $controller;
-    private $action;
+    private string $method;
+    private string $controller;
+    private string $action;
 
 
     public function __construct()
     {
-        $this->validetedUri()->resolveController();
         $this->uri = request()->uri();
-
+        $this->method = request()->method();
+        $this->validetedUri()->resolveController();
     }
 
 
     public function validetedUri() : Router|InvalidArgumentException
     {
 
-        $uri = request()->uri();
-        $uri = explode('?', $uri)[0];
+        $uri = explode('?', $this->uri[0]);
 
         foreach(Route::$route as $route) {
             if($route['uri'] === $uri && $route['method'] === request()->method()) {

@@ -1,3 +1,3 @@
-/vendor
+vendor
 /composer_lock
 /.idea
