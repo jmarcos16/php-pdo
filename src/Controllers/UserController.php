@@ -6,6 +6,6 @@ class UserController
 {
     public function index()
     {
-        echo 'UserController';
+        print_r(['Hello World' => 'Hello World']);
     }
 }
