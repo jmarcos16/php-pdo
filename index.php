@@ -9,9 +9,6 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/web.php';
 
 
-// $whoops = new Run();
-// $whoops->pushHandler(new PrettyPageHandler);
-// $whoops->register();
+$value = new Router();
 
-
-new Router();
+// dd($value);

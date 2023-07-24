@@ -15,7 +15,9 @@
     ]
   },
   "require": {
-    "symfony/var-dumper": "^6.3",
-    "filp/whoops": "^2.15"
+    "symfony/var-dumper": "^6.3"
+  },
+  "scripts": {
+    "serve": "php -S localhost:8080"
   }
 }

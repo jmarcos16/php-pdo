@@ -18,9 +18,9 @@ class Router
 
     public function __construct()
     {
-        $this->uri = request()->uri();
+        $this->uri = explode('?', request()->uri())[0];
         $this->method = request()->method();
-        $this->validetedUri()->resolveController();
+        $this->validetedUri()->resolveController()->resolveAction();
     }
 
 
@@ -40,29 +40,41 @@ class Router
      *  Resolve url and return controller and method
      */
 
-    public function resolveController(): Router
+    public function resolveController(): Router|InvalidArgumentException
     {
-        $uri = request()->uri();
-        $uri = explode('?', $uri)[0];
 
-        foreach(Route::$route as $route) {
-            if($route['uri'] === $uri && $route['method'] === request()->method()) {
-                if(class_exists($route['action'][0])) {
-                    $this->controller = $route['action'][0];
+        $route = array_filter(Route::$route, function ($route) {
+            return $route['uri'] === $this->uri && $route['method'] === $this->method;
+        });
 
-                    if(method_exists($this->controller, $route['action'][1])) {
-                        $this->action = $route['action'][1];
-                        return $this;
-                    }
+        $controller = reset($route[array_key_first($route)]['action']);
 
-                    throw new \InvalidArgumentException('Method not found');
-                }
-
-                throw new \InvalidArgumentException('Controller not found');
-            }
+        if(class_exists($controller)) {
+            $this->controller = $controller;
+            return $this;
         }
 
-        throw new \InvalidArgumentException('Route not found');
+        throw new InvalidArgumentException($controller . ' not found');
+                
+    }
+
+    public function resolveAction() : Router|InvalidArgumentException
+    {
+
+        $route = array_filter(Route::$route, function ($route) {
+            return $route['uri'] === $this->uri && $route['method'] === $this->method;
+        });
+
+        $action = end($route[array_key_first($route)]['action']);
+
+
+        if(method_exists($this->controller, $action)) {
+            (new $this->controller)->$action();
+            $this->action = $action;
+            return $this;
+        }
+
+        throw new InvalidArgumentException($action . ' not found in ' . $this->controller . ' class');
     }
 
 }
