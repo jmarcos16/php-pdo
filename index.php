@@ -1,14 +1,10 @@
 <?php
 
-use Whoops\Run;
-use src\Router\Route;
-use src\config\Router;
-use Whoops\Handler\PrettyPageHandler;
+use src\core\Router;
+use src\core\Request;
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/web.php';
 
 
-$value = new Router();
-
-// dd($value);
+$value = new Router(new Request);
