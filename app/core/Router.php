@@ -3,8 +3,8 @@
 namespace src\core;
 
 use InvalidArgumentException;
-use src\core\Request;
-use src\Router\Route;
+use app\core\Route;
+use app\core\Request;
 
 class Router
 {

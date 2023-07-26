@@ -14,13 +14,12 @@
       "app/Helpers/functions.php"
     ]
   },
-  "require": {
-    "symfony/var-dumper": "^6.3"
-  },
+  "require": {},
   "scripts": {
     "serve": "php -S localhost:8080"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^3.22"
+    "friendsofphp/php-cs-fixer": "^3.22",
+    "symfony/var-dumper": "^6.3"
   }
 }

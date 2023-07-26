@@ -3,7 +3,7 @@
         'name' => 'jose.ferreira/rotas-phpoo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd407c2f248e626e530691864d0da0f72a463284d',
+        'reference' => 'e863f30184efd4d168cd45fc94be183473b1393a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -67,7 +67,7 @@
         'jose.ferreira/rotas-phpoo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd407c2f248e626e530691864d0da0f72a463284d',
+            'reference' => 'e863f30184efd4d168cd45fc94be183473b1393a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -233,7 +233,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
         'symfony/polyfill-php80' => array(
             'pretty_version' => 'v1.27.0',
@@ -296,7 +296,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/var-dumper',
             'aliases' => array(),
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ),
     ),
 );
