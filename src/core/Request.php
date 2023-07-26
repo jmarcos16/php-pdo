@@ -32,4 +32,9 @@ class Request
         return $_SERVER['REQUEST_METHOD'];
     }
 
+    public function get(string $key): mixed
+    {
+        return $_POST[$key] ?? null;
+    }
+
 }

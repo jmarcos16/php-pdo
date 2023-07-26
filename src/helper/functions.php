@@ -1,8 +1,11 @@
 <?php
 
-function request(): \src\core\Request
+use src\core\Route;
+use src\core\Request;
+
+function request(): Request
 {
-    return new \src\core\Request();
+    return new Request;
 }
 
 
@@ -11,7 +14,7 @@ function collection(): stdClass
     return new stdClass();
 }
 
-function route(): \src\Router\Route
+function route(): Route
 {
-    return new \src\Router\Route();
+    return new Route;
 }

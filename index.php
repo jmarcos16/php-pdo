@@ -7,4 +7,9 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/web.php';
 
 
-$value = new Router(new Request);
+try {
+    $value = new Router(new Request);
+
+} catch (Exception $e) {
+    exit($e->getMessage());
+}
