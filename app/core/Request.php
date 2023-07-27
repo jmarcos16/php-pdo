@@ -55,4 +55,9 @@ class Request
 
     }
 
+    public function all(): array
+    {
+        return $this->attributes;
+    }
+
 }

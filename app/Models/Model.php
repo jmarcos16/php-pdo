@@ -45,11 +45,6 @@ class Model{
                         
     }
 
-
-    public function __get($name)
-    {
-        return collection($this->attributes);
-    }
 }
 
 

@@ -5,14 +5,11 @@ class User extends Model{
 
     protected $table = 'users';
 
-    public function all() : self
+    public function all() : array
     {
         $query = $this->connection->prepare("SELECT * FROM {$this->table}");
         $query->execute();
-        
-        $this->attributes = $query->fetchAll();
-        return $this;
-
+        return $query->fetchAll();
     }
 
 }
