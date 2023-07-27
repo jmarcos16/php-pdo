@@ -1,10 +1,8 @@
 <?php
 
-namespace src\core;
+namespace app\core;
 
 use InvalidArgumentException;
-use app\core\Route;
-use app\core\Request;
 
 class Router
 {

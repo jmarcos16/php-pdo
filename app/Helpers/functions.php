@@ -1,7 +1,8 @@
 <?php
 
-use src\core\Route;
-use src\core\Request;
+use app\core\Route;
+use app\core\Request;
+use app\core\JsonResponse;
 
 function request(): Request
 {
@@ -17,4 +18,13 @@ function collection(): stdClass
 function route(): Route
 {
     return new Route;
+}
+
+
+if(!function_exists('json')){
+
+    function json(){
+        return new JsonResponse;
+    }
+
 }

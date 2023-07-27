@@ -1,7 +1,7 @@
 <?php
 
-use src\Controllers\UserController;
-use src\core\Route;
+use app\Controllers\UserController;
+use app\core\Route;
+
 
 Route::get('/', [UserController::class, 'index']);
-Route::post('/user', [UserController::class, 'store']);

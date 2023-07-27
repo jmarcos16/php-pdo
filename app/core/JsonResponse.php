@@ -4,11 +4,6 @@ namespace app\core;
 class JsonResponse
 {
     
-    public function __construct(mixed $data = [], int $code = 200, $headers = [])
-    {
-        $this->send($data, $code, $headers);
-    }
-    
     public function send(mixed $data = [], int $code = 200, $headers = [])
     {
         http_response_code($code);
@@ -17,6 +12,6 @@ class JsonResponse
             header($key . ': ' . $value);
         }
         echo json_encode($data);
-        exit;
+        return $this;
     }
 }

@@ -3,7 +3,7 @@
         'name' => 'jose.ferreira/rotas-phpoo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e863f30184efd4d168cd45fc94be183473b1393a',
+        'reference' => 'ccec1509aff8eacdfcc0140344bce7111ce773aa',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -67,7 +67,7 @@
         'jose.ferreira/rotas-phpoo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e863f30184efd4d168cd45fc94be183473b1393a',
+            'reference' => 'ccec1509aff8eacdfcc0140344bce7111ce773aa',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -147,6 +147,15 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'symfony/dotenv' => array(
+            'pretty_version' => 'v6.3.0',
+            'version' => '6.3.0.0',
+            'reference' => 'ceadb434fe2a6763a03d2d110441745834f3dd1e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/dotenv',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/event-dispatcher' => array(
             'pretty_version' => 'v6.3.0',

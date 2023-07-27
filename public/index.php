@@ -1,11 +1,13 @@
 <?php
 
-use src\core\Router;
-use src\core\Request;
+require '../vendor/autoload.php';
+require '../routes/web.php';
 
-require __DIR__ . '../vendor/autoload.php';
-require __DIR__ . '../routes/web.php';
+use app\core\Router;
+use Symfony\Component\Dotenv\Dotenv;
 
+$dontenv = new Dotenv();
+$dontenv->load('../.env');
 
 try {
     $value = new Router(request());

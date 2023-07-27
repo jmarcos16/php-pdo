@@ -42,6 +42,7 @@ class ComposerStaticInit8a8f013ff1a42e18d05884c03f682175
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Dotenv\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
         ),
         'P' => 
@@ -133,6 +134,10 @@ class ComposerStaticInit8a8f013ff1a42e18d05884c03f682175
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'Symfony\\Component\\Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dotenv',
         ),
         'Symfony\\Component\\Console\\' => 
         array (
