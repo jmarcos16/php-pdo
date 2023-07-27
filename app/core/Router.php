@@ -56,7 +56,7 @@ class Router
         $action = end($this->route[array_key_first($this->route)]['action']);
 
         if(method_exists($this->controller, $action)) {
-            (new $this->controller)->$action();
+            (new $this->controller)->$action(request());
             return $this->action = $action;
         }
 

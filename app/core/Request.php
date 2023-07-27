@@ -7,19 +7,19 @@ class Request
     public string $uri;
     public ?string $query;
     public string $method;
+    public ?array $attributes = [];
 
     public function __construct()
     {
         $this->uri = $this->uri();
         $this->query = $this->query();
         $this->method = $this->method();
+        $this->setAttributes();
     }
-
-
 
     public function uri(): string
     {
-        return $_SERVER['REQUEST_URI'];
+        return explode('?', $_SERVER['REQUEST_URI'])[0];
     }
 
     public function query(): string|null
@@ -34,7 +34,25 @@ class Request
 
     public function get(string $key): mixed
     {
-        return $_POST[$key] ?? null;
+        return $this->attributes[$key] ?? null;
+    }
+
+    public function __get($name)
+    {
+        return $this->get($name);
+    }
+
+    public function setAttributes()
+    {
+        
+        if($this->method === 'POST'){
+            $this->attributes = $_POST;
+        }
+
+        if($this->method === 'GET'){
+            $this->attributes = $_GET;
+        }
+
     }
 
 }

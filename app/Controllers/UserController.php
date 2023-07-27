@@ -1,18 +1,19 @@
 <?php
 namespace app\Controllers;
 
-use app\core\JsonResponse;
+use app\core\Request;
+use app\Models\User;
 
 class UserController extends Controller{
 
+    public function index(Request $request){
 
 
-    public function index(){
-        
-
+        dd(request());
+        dd(request('name'));
         return json()->send([
-            'message' => 'not found'
-        ], 404);
+            'users' => $request
+        ]);
     }
     
 }

@@ -4,9 +4,13 @@ use app\core\Route;
 use app\core\Request;
 use app\core\JsonResponse;
 
-function request(): Request
+function request(?string $key = null): Request|string|array|null
 {
-    return new Request;
+    if(is_null($key)){
+        return new Request;
+    }
+
+    return (new Request)->__get($key);
 }
 
 
