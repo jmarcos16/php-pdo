@@ -15,8 +15,11 @@ class JsonResponse
         return self::class;
     }
 
-    public function sendError(string $message, int $code = 500)
+    public function sendError(string $message, $code = 500)
     {
+
+    is_string($code) ? $code = 500 : $code;
+
        self::send(['error' => $message], $code);
     }
 }

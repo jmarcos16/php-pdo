@@ -47,10 +47,37 @@ class Model{
 
     public function all()
     {
-        $query = "SELECT * FROM {$this->table}";
-        dd($query);
-        // $query->execute();
-        // return $query->fetchAll();
+        $query = $this->connection->prepare("SELECT * FROM {$this->table}");
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function find($id)
+    {
+        $query = $this->connection->prepare("SELECT * FROM {$this->table} WHERE id = :id");
+        $query->execute(['id' => $id]);
+        return $query->fetch();
+    }
+
+    public function create($data)
+    {
+        $query = $this->connection->prepare("INSERT INTO {$this->table} ({$this->columns}) VALUES ({$this->values})");
+        $query->execute($data);
+        return $this->connection->lastInsertId();
+    }
+
+    public function update($id, $data)
+    {
+        $query = $this->connection->prepare("UPDATE {$this->table} SET {$this->update} WHERE id = :id");
+        $query->execute(array_merge($data, ['id' => $id]));
+        return $query->rowCount();
+    }
+
+    public function delete($id)
+    {
+        $query = $this->connection->prepare("DELETE FROM {$this->table} WHERE id = :id");
+        $query->execute(['id' => $id]);
+        return $query->rowCount();
     }
 
 }
