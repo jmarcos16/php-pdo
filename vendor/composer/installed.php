@@ -3,7 +3,7 @@
         'name' => 'jose.ferreira/rotas-phpoo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ccec1509aff8eacdfcc0140344bce7111ce773aa',
+        'reference' => '9b0e95c7382879f0c255f2f3286e5eef206e2a14',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -67,7 +67,7 @@
         'jose.ferreira/rotas-phpoo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ccec1509aff8eacdfcc0140344bce7111ce773aa',
+            'reference' => '9b0e95c7382879f0c255f2f3286e5eef206e2a14',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
