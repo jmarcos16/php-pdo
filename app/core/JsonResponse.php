@@ -12,6 +12,11 @@ class JsonResponse
             header($key . ': ' . $value);
         }
         echo json_encode($data);
-        return $this;
+        return self::class;
+    }
+
+    public function sendError(string $message, int $code = 500)
+    {
+       self::send(['error' => $message], $code);
     }
 }

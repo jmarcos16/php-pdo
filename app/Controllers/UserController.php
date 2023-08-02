@@ -7,8 +7,10 @@ use app\Models\User;
 class UserController extends Controller{
 
     public function index(Request $request){
-        
-        return json()->send($request);
+        $user = new User();
+        $users = $user->all();
+        return $this->view('user', ['users' => $users]);
+
     }
     
 }

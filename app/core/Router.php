@@ -29,7 +29,7 @@ class Router
             return $route['uri'] === $this->uri && $route['method'] === $this->method;
         });
 
-        return $route ? $this->route = $route : throw new InvalidArgumentException('Route not found');
+        return $route ? $this->route = $route : throw new InvalidArgumentException('Route not found', 404);
     }
 
 
@@ -46,7 +46,7 @@ class Router
             return $this->controller = $controller;
         }
 
-        throw new InvalidArgumentException($this->controller . ' not found');
+        throw new InvalidArgumentException($this->controller . ' not found', 404);
                 
     }
 
@@ -60,7 +60,7 @@ class Router
             return $this->action = $action;
         }
 
-        throw new InvalidArgumentException($this->action . ' not found in ' . $this->controller . ' class');
+        throw new InvalidArgumentException($this->action . ' not found in ' . $this->controller . ' class', 404);
     }
 
 }
