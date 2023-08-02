@@ -61,7 +61,8 @@ class Model{
 
     public function create($data)
     {
-        $query = $this->connection->prepare("INSERT INTO {$this->table} ({$this->columns}) VALUES ({$this->values})");
+        $query = $this->connection->prepare("INSERT INTO {$this->table} ({$this->fillable}) VALUES ({$this->values})");
+        // dd($query);
         $query->execute($data);
         return $this->connection->lastInsertId();
     }
