@@ -14,5 +14,5 @@ $dontenv->load('../.env');
 try {
     $value = new Router(request());
 } catch (Exception $e) {
-    json()->sendError($e->getMessage());
+    json()->sendError($e->getMessage(), $e->getCode());
 }

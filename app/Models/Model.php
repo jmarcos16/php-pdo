@@ -40,9 +40,17 @@ class Model{
 
 
         }catch(PDOException $e){
-            throw new PDOException($e->getMessage());
+            throw new PDOException($e->getMessage(), 502);
         }
                         
+    }
+
+    public function all()
+    {
+        $query = "SELECT * FROM {$this->table}";
+        dd($query);
+        // $query->execute();
+        // return $query->fetchAll();
     }
 
 }

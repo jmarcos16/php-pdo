@@ -6,11 +6,24 @@ use app\Models\User;
 
 class UserController extends Controller{
 
-    public function index(Request $request){
-        $user = new User();
+    public function index(){
+        $user = new User;
         $users = $user->all();
-        return $this->view('user', ['users' => $users]);
 
+        dd(
+            $users
+        );
+
+       json()->send($users);
+    }
+
+    public function show(){
+        $user =  [ 
+            'name'      => 'John Doe',
+            'email'     => 'test@gmail.com',
+            'password'  => '123456'
+        ];
+        json()->send($user);
     }
     
 }
